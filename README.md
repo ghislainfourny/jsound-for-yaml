@@ -104,7 +104,7 @@ In order to make the name field required, we can add an exclamation mark, like s
 
 ```
 my-type
-  !name: string
+  "!name": string
 ```
 
 Then, these documents become invalid:
@@ -184,7 +184,7 @@ For further reference, these types (except null) are documented in the [XML Sche
 
 ```
 my-type:
-  !field: integer
+  "!field": integer
 ```
 
 The following instances are valid:
@@ -216,7 +216,7 @@ field: 123450987234502983452345
 
 ```
 my-type:
-  !field: decimal
+  "!field": decimal
 ```
 The following instances are valid:
 
@@ -248,7 +248,7 @@ field: 123450987234502983452345.23405978234059872345023945809823745
 
 ```
 my-type:
-  !field: double
+  "!field": double
 ```
 
 The following instances are valid:
@@ -276,7 +276,7 @@ field: -1234.2345e-345
 ### boolean
 ```
 my-type:
-  !field: boolean
+  "!field": boolean
 ```
 The following instances are valid:
 
@@ -292,7 +292,7 @@ field: false
 
 ```
 my-type:
-  !field: anyURI
+  "!field": anyURI
 ```
 The following instances are valid:
 
@@ -306,7 +306,7 @@ field: http://www.example.com
 
 ```
 my-type:
-  !field: base64Binary
+  "!field": base64Binary
 ```
 The following instances are valid:
 
@@ -318,7 +318,7 @@ field: SGVsbG8sIHdvcmxk
 
 ```
 my-type:
-  !field: hexBinary
+  "!field": hexBinary
 ```
 The following instances are valid:
 
@@ -330,7 +330,7 @@ field: 8a08b0c0908f
 
 ```
 my-type:
-  !field: date
+  "!field": date
 ```
 The following instances are valid:
 
@@ -343,7 +343,7 @@ field: 2019-01-19
 
 ```
 my-type:
-  !field: dateTime
+  "!field": dateTime
 ```
 The following instances are valid:
 
@@ -367,7 +367,7 @@ field: 2019-01-19T12:00:00.000+02:00
 
 ```
 my-type:
-  !field: time
+  "!field": time
 ```
 The following instances are valid:
 
@@ -391,7 +391,7 @@ field: 12:00:00.000+02:00
 
 ```
 my-type:
-  !field: dateTimeStamp
+  "!field": dateTimeStamp
 ```
 The following instances are valid:
 
@@ -405,7 +405,7 @@ The following instances are valid:
 
 ```
 my-type:
-  !field: duration
+  "!field": duration
 ```
 The following instances are valid:
 
@@ -423,7 +423,7 @@ The following instances are valid:
 
 ```
 my-type:
-  !field null
+  "!field": null
 ```
 The following instances are valid:
 
@@ -440,7 +440,7 @@ For example, we can define an array of integers like so:
 
 ```
 my-type:
-  !field:
+  "!field":
     - integer
 ```
 
@@ -458,10 +458,10 @@ We can also nest type declarations and, for example, define an array of objects 
 
 ```
 my-type:
-  !field:
-    !first: string
-    !last: string=N/A
-    !age: integer
+  "!field":
+    "!first": string
+    "!last": string=N/A
+    "!age": integer
 ```
 
 The following instances are valid -- as you can see, the schema looks very similar to them, which makes it easy to read:
@@ -482,9 +482,9 @@ It is also possible to name the object type and refer to it. The following schem
 
 ```
 person:
-  !first: string
-  !last: string=N/A
-  !age: integer
+  "!first": string
+  "!last": string=N/A
+  "!age": integer
 list:
   field:
     - person
@@ -494,12 +494,12 @@ It is also possible to require uniqueness within an array of objects. For exampl
 
 ```
 my-type:
-  !field:
+  "!field":
     -
-      @id: integer
-      !first: string
-      !last: string=N/A
-      !age: integer
+      "@id": integer
+      "!first": string
+      "!last": string=N/A
+      "!age": integer
 ```
 
 The following instance is then valid:
