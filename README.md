@@ -157,7 +157,7 @@ A question mark indicates that null is allowed:
 
 ```
 my-type:
-  name: string?
+  name: "string?"
 ```
 
 This instance is then valid:
