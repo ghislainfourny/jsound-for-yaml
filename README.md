@@ -485,9 +485,9 @@ person:
   !first: string
   !last: string=N/A
   !age: integer
-  list:
-    field:
-      - person
+list:
+  field:
+    - person
 ```
 
 It is also possible to require uniqueness within an array of objects. For example, we can require that persons have different IDs with the @ symbol:
