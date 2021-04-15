@@ -292,7 +292,7 @@ my-type:
 The following instances are valid:
 
 ```
-{ "field" : "http://www.example.com" }
+field: http://www.example.com
 ```
 
 (Actually, any string is accepted, but it signals an intent to include URIs).
@@ -306,7 +306,7 @@ my-type:
 The following instances are valid:
 
 ```
-{ "field" : "SGVsbG8sIHdvcmxk" }
+field: SGVsbG8sIHdvcmxk
 ```
 
 ### hexBinary
@@ -318,7 +318,7 @@ my-type:
 The following instances are valid:
 
 ```
-{ "field" : "8a08b0c0908f" }
+field: 8a08b0c0908f
 ```
 
 ### date
@@ -330,7 +330,7 @@ my-type:
 The following instances are valid:
 
 ```
-{ "field" : "2019-01-19" }
+field: 2019-01-19
 ```
 
 
@@ -343,10 +343,19 @@ my-type:
 The following instances are valid:
 
 ```
-{ "field" : "2019-01-19T12:00:00" }
-{ "field" : "2019-01-19T12:34:56.789" }
-{ "field" : "2019-01-19T12:00:00.000Z" }
-{ "field" : "2019-01-19T12:00:00.000+02:00" }
+field: 2019-01-19T12:00:00
+```
+
+```
+field: 2019-01-19T12:34:56.789
+```
+
+```
+field: 2019-01-19T12:00:00.000Z
+```
+
+```
+field: 2019-01-19T12:00:00.000+02:00
 ```
 
 ### time
@@ -543,37 +552,31 @@ JSound for YAML 2.0 also supports annotation. Annotation means that an input ins
 For example, let us consider the following schema:
 
 ```
-{
-  "person" : {
-    "first" : "string",
-    "middle" : "string?",
-    "last" : "string=N/A",
-    "age" : "integer",
-    "picture" : "hexBinary"
-  },
-  "persons-array" : [ "person" ],
-  "persons" : { "list" : "persons-array" }
-}
+person:
+  first: string
+  middle: string?
+  last: string=N/A
+  age: integer
+  picture: hexBinary
+persons-array:
+  - person
+persons:
+  list: persons-array
 ```
 
 And the following instance, valid against the type persons:
 
 ```
-{
-  "list" : [
-    {
-      "first" : "James",
-      "middle" : null,
-      "last" : "Kirk",
-      "picture" : "0123456789abcdef"
-    },
-    {
-      "first" : "Spock",
-      "middle" : "S",
-      "picture" : "aaaaaaaaaaaaaaaaaaa"
-    }
-  ]
-}
+list:
+  -
+    first: James
+    middle: null
+    last: Kirk
+    picture" : "0123456789abcdef
+  -
+    first: Spock
+    middle: S
+    picture: aaaaaaaaaaaaaaaaaaa
 ```
 
 Annotation will output the following TYSON instance, where all values are associated with a type, and default values are populated:
