@@ -1,14 +1,16 @@
 # Getting started with JSound 2.0
 
-This tutorial gives an introduction to [JSound 2.0](http://www.jsound-spec.org/), starting with its compact syntax.
+This tutorial gives an introduction to [JSound 2.0](http://www.jsound-spec.org/), starting with its compact syntax for YAML.
+
+Note: not all the content below has be retranscripted into YAML, but this will come.
 
 ## JSound's type system
 
-JSound 2.0 is a schema language that validates and annotates JSON documents.
+JSound for YAML 2.0 is a schema language that validates and annotates YAML documents.
 
 Whereas some other JSON Schema languages are based on filtering JSON documents, a JSound schema is best seen as a collection of type declarations.
 
-JSound supports four kinds of types corresponding to JSON's spirit:
+JSound for YAML supports four kinds of types corresponding to YAML's spirit:
 
 - atomic types, with a selection of builtin, ready-to-use types: string, integer, date, hexBinary to name a few
 - object types, to validate and annotate JSON objects
@@ -19,7 +21,7 @@ JSound supports four kinds of types corresponding to JSON's spirit:
 
 Let us start with a simple example.
 
-This is a JSON instance:
+This is a YAML instance:
 
 ```
 name: JSound
@@ -165,7 +167,7 @@ Technically, what is defined here is a union type with the member types string a
 
 We used so far the string builtin type. There are a few others builtin atomic types.
 
-The validation of an atomic type is done based on its lexical value. Whether it is quoted or not is totally irrelevant, as long as the input is well-formed JSON.
+The validation of an atomic type is done based on its lexical value. Whether it is quoted or not is totally irrelevant, as long as the input is well-formed YAML.
 
 We provide below the list of builtin types, and for simplicity simple give examples of valid instances.
 
@@ -274,8 +276,11 @@ my-type:
 The following instances are valid:
 
 ```
-{ "field" : true }
-{ "field" : "false" }
+field: true
+```
+
+```
+field: false
 ```
 
 ### anyURI
@@ -529,11 +534,11 @@ As a reminder, "?" is a shortcut for "|null".
 
 ### Predefined types
 
-JSound also has predefined types: "atomic" contains all atomic values (it can be seen as the union of all of atomic types). "object" contains all objects, "array" contains all arrays and "value" contains any JSON values: atomic, object or array.
+JSound for YAML also has predefined types: "atomic" contains all atomic values (it can be seen as the union of all of atomic types). "object" contains all objects, "array" contains all arrays and "value" contains any YAML values: atomic, object or array.
 
 ## Annotation
 
-JSound 2.0 also supports annotation. Annotation means that an input instance is taken, and a TYSON instance is output. TYSON is simply JSON with type annotations.
+JSound for YAML 2.0 also supports annotation. Annotation means that an input instance is taken, and a TYSON instance is output. TYSON is simply JSON with type annotations.
 
 For example, let us consider the following schema:
 
