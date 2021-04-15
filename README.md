@@ -567,7 +567,7 @@ For example, let us consider the following schema:
 ```
 person:
   first: string
-  middle: string?
+  middle: "string?"
   last: string=N/A
   age: integer
   picture: hexBinary
