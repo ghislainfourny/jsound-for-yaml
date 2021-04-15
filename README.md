@@ -1,4 +1,4 @@
-# Getting started with JSound 2.0
+# Getting started with JSound for YAML 2.0
 
 This tutorial gives an introduction to [JSound 2.0](http://www.jsound-spec.org/), starting with its compact syntax for YAML (credits for the idea: Dana Florescu).
 
