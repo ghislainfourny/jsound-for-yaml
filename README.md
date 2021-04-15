@@ -17,6 +17,11 @@ JSound for YAML supports four kinds of types corresponding to YAML's spirit:
 - array types, to validate and annotate JSON arrays
 - union types, to combine several types and union their value spaces
 
+## JSON and YAML
+
+Note that a JSound for YAML schema can be used to validate both JSON and YAML syntax.
+Likewise, a "classical" JSound schema can be used to validate both JSON and YAML syntax.
+
 ## A hello world
 
 Let us start with a simple example.
