@@ -516,7 +516,6 @@ field:
     first: Kathryn
     last: Janeway
     age: 50
-    { "id" : 2, "first" : "Kathryn", "last" : "Janeway", "age" : 50 },
   -
     id: 3
     first: Spock
