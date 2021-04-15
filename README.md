@@ -525,13 +525,21 @@ field:
 But not this one:
 
 ```
-{
-  "field" : [
-    { "id" : 1, "first" : "James", "last" : "Kirk", "age" : 30 },
-    { "id" : 2, "first" : "Kathryn", "last" : "Janeway", "age" : 50 },
-    { "id" : 2, "first" : "Spock", "age" : 234 }
-  ]
-}
+field:
+  -
+    id: 1
+    first: James
+    last: Kirk
+    age: 30
+  -
+    id: 2
+    first: Kathryn
+    last: Janeway
+    age: 50
+  -
+    id: 2
+    first: Spock
+    age: 234
 ```
 
 ## Union types
@@ -539,17 +547,20 @@ But not this one:
 Unions can be defined in field types with the | symbol.
 
 ```
-{
-  "my-type" : {
-    "integers-or-booleans" : [ "integer|boolean" ]
-  }
-}
+my-type:
+  integers-or-booleans:
+    - integer|boolean
 ```
 
 Valid instance:
 
 ```
-{ "integers-or-booleans" : [ 1, 3, true, 4, false ] }
+integers-or-booleans:
+  - 1
+  - 3
+  - true
+  - 4
+  - false
 ```
 
 As a reminder, "?" is a shortcut for "|null".
