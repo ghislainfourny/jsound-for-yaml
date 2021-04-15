@@ -66,8 +66,8 @@ age: 234
 ```
 
 ```
-spaceship USS Discovery
-name Michael Burnham
+spaceship: USS Discovery
+name: Michael Burnham
 ```
 
 ```
@@ -372,10 +372,19 @@ my-type:
 The following instances are valid:
 
 ```
-{ "field" : "12:00:00" }
-{ "field" : "12:34:56.789" }
-{ "field" : "12:00:00.000Z" }
-{ "field" : "12:00:00.000+02:00" }
+field: 12:00:00
+```
+
+```
+field: "2:34:56.789
+```
+
+```
+field: 12:00:00.000Z
+```
+
+```
+field: 12:00:00.000+02:00
 ```
 ### dateTimeStamp
 
